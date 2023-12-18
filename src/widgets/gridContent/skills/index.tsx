@@ -1,27 +1,41 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import styles from './index.module.scss'
-
+import { Pagination } from 'swiper/modules';
 
 
 function SkillsSliderWidget() {
 
-	const { container } = styles
+	const { container, skillPic, singleSlide, title } = styles
+
+	const skillsPictures = [
+		'/skills_icons/typescript-icon-round.svg',
+		'/skills_icons/react.svg',
+		'/skills_icons/redux.svg',
+		'/skills_icons/nextjs-icon.svg'
+	]
 
 	return (
+
 		<Swiper
-			spaceBetween={50}
 			slidesPerView={1}
-			onSlideChange={() => console.log('slide change')}
-			onSwiper={(swiper) => console.log(swiper)}
+			pagination={true}
+			modules={[Pagination]}
 			className={container}
 		>
-
-			<SwiperSlide>Slide 2</SwiperSlide>
-			<SwiperSlide>Slide 3</SwiperSlide>
-			<SwiperSlide>Slide 4</SwiperSlide>
-			<SwiperSlide>Slide 4</SwiperSlide>
+			<span className={title}>Stack:</span>
+			{skillsPictures.map((picture, index) => (
+				<SwiperSlide
+					key={index}
+					className={singleSlide}
+				>
+					<img src={picture} className={skillPic} />
+				</SwiperSlide>
+			))}
 		</Swiper>
+
+
 	)
 }
 

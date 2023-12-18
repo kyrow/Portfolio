@@ -1,24 +1,19 @@
 .container {
+	position: relative;
 	width: 100%;
 	height: 100%;
-	position: relative;
-}
-
-.skillPic {
-	width: 150px;
-	height: 150px;
-	background-size: cover;
-}
-
-.singleSlide {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.title {
+.toggleBtn {
 	position: absolute;
-	color: aliceblue;
 	top: 0;
 	left: 0;
+	width: 35px;
+	height: 35px;
+	border-radius: 100px;
+	border: 1px solid black;
+	background-color: #C7C7C7;
 }
