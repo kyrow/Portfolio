@@ -10,10 +10,22 @@
 .toggleBtn {
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	width: 35px;
 	height: 35px;
 	border-radius: 100px;
-	border: 1px solid black;
-	background-color: #C7C7C7;
+	border: 3px solid $green_border;
+	background-color: $green_bg;
+}
+
+.mainIcon {
+	width: 100px;
+	height: 100px;
+}
+
+[data-theme="dark"] {
+	.toggleBtn {
+		border: 3px solid $light_add;
+		background-color: $dark_border;
+	}
 }

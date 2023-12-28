@@ -5,6 +5,7 @@ import AboutMeWidget from '../gridContent/aboutMe';
 import SkillsSliderWidget from '../gridContent/skills';
 import ContactWidget from "../gridContent/contact";
 import ThemeTogglerWidget from "../gridContent/themeToggler";
+import ExperienceWidget from "../gridContent/experience";
 
 function GridLayoutWidget() {
 	const { block } = styles;
@@ -16,6 +17,7 @@ function GridLayoutWidget() {
 			{ i: "b", x: 6, y: 0, w: 3, h: 4, isResizable: false },
 			{ i: "c", x: 9, y: 0, w: 3, h: 4, isResizable: false },
 			{ i: "d", x: 0, y: 1, w: 3, h: 4, isResizable: false },
+			{ i: "e", x: 3, y: 1, w: 3, h: 8, isResizable: false },
 		]
 
 	const components = [
@@ -23,6 +25,7 @@ function GridLayoutWidget() {
 		<SkillsSliderWidget />,
 		<ContactWidget />,
 		<ThemeTogglerWidget />,
+		<ExperienceWidget />
 	];
 
 	return (

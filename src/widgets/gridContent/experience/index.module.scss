@@ -1,0 +1,88 @@
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	button {
+		display: flex;
+		align-items: center;
+		color: $light_header;
+
+		.icon {
+			margin-left: 15px;
+		}
+
+		&:hover {
+			color: $light_add;
+			transform: translateX(15px);
+			transition: all 0.5s;
+		}
+
+		transition: all 0.5s;
+
+	}
+}
+
+.timelineContainer {
+	width: 100%;
+	height: 80%;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.timeLine {
+	height: 100%;
+	width: 2px;
+	border-left: 2px solid black;
+}
+
+.workList {
+	margin-left: 20px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.workContainer {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	.pointer {
+		font-weight: 600;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateX(-22px);
+	}
+}
+
+
+[data-theme="dark"] {
+	.timeLine {
+		height: 100%;
+		width: 2px;
+
+		border-left: 2px solid white;
+	}
+
+	.container {
+
+		button {
+			color: $dark_header;
+
+			&:hover {
+				color: $light_add;
+				transform: translateX(15px);
+				transition: all 0.5s;
+			}
+
+			transition: all 0.5s;
+
+		}
+	}
+}

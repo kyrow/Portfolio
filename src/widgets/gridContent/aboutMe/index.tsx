@@ -7,7 +7,7 @@ import { BlacksadModel } from '../../../assets/models/Scene'
 
 function AboutMeWidget() {
 
-	const { container, jobStatus, dot, modelContainer } = styles
+	const { container, jobStatus, dot, modelContainer, textSection } = styles
 
 	return (
 
@@ -36,9 +36,10 @@ function AboutMeWidget() {
 				</Canvas>
 
 			</div>
-			<div>
+			<div className={textSection}>
 				<h2>My name is Alexander</h2>
 				<p>I'm frontend developer.</p>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum atque ducimus id nemo rerum? Recusandae ullam repellat assumenda.</p>
 			</div>
 		</div>
 	)

@@ -1,21 +1,49 @@
 @import "./normalize.scss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+
 }
 
 body {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	font-family: 'Rubik', sans-serif;
+	background-color: $light_background;
+	color: $light_text;
 
-	background-color: white;
-	color: $black;
+
+	p {
+		color: $light_text;
+	}
+
+	h2 {
+		color: $light_header;
+	}
 }
 
 [data-theme="dark"] {
-	background-color: $black;
-	color: white;
+	background-color: $dark_background;
+	color: $dark_text;
+
+	h2 {
+		color: $dark_header;
+	}
+
+	p {
+		color: $dark_text;
+	}
+}
+
+.swiper-pagination-bullet {
+	opacity: 1;
+	background: $light_header;
+}
+
+.swiper-pagination-bullet-active {
+	background: $light_add;
 }

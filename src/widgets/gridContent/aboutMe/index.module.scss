@@ -11,24 +11,43 @@
 	position: relative;
 }
 
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 .jobStatus {
 	position: absolute;
 	top: 0;
 	right: 0;
 
 	padding: 5px;
-	border: 1px solid #fff;
+	border: 2px solid $green_border;
 	border-radius: 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: $green_bg;
+	color: $green_text;
 
 	.dot {
 		width: 10px;
 		height: 10px;
-		background-color: #32FF51;
+		background-color: $green_border;
 		border-radius: 100px;
 		margin-right: 5px;
+
+		animation: blink 1s infinite;
+		box-shadow: 0 0 8px $green_dot;
 	}
 }
 
@@ -39,4 +58,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.textSection {
+	h2 {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+
+	p {
+		line-height: 18px
+	}
 }

@@ -3,25 +3,75 @@
 	height: 100%;
 
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: flex-end;
-}
-
-.textSection {
-	width: 100%;
-	height: 100%;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
+	position: relative;
+}
 
+.textSection {
+	li {
+		margin-bottom: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		a {
+			margin-left: 5px;
+			text-decoration: none;
+			color: $light_text;
+
+			&:hover {
+				color: $light_add;
+			}
+		}
+	}
+}
+
+.button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 35px;
+	height: 35px;
+	border-radius: 100px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.5s;
+	background-color: $light_add;
+
+	&:hover {
+		width: 65px;
+		transition: all 0.5s;
+	}
+}
+
+.buttonIcon {
+	color: $light_background;
+}
+
+.reverseButtonIcon {
+	color: $light_background;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+[data-theme="dark"] {
+
+	.buttonIcon {
+		color: $dark_background;
+	}
+
+	.reverseButtonIcon {
+		color: $dark_background;
+		-webkit-transform: scaleX(-1);
+		transform: scaleX(-1);
+	}
+
+	.textSection {
 		li {
-			margin-bottom: 5px;
+			margin-bottom: 15px;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -30,24 +80,14 @@
 			a {
 				margin-left: 5px;
 				text-decoration: none;
-				color: #fff;
+				color: $dark_text;
+
+				&:hover {
+					color: $light_add;
+				}
 			}
 		}
 	}
-}
-
-.button {
-	width: 35px;
-	height: 35px;
-	border-radius: 100px;
-	border: none;
-	cursor: pointer;
-	position: relative;
-	transition: all 0.5s;
 
 
-	&:hover {
-		width: 65px;
-		transition: all 0.5s;
-	}
 }

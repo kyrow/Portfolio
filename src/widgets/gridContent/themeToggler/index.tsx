@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import styles from './index.module.scss'
-import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ThemeTogglerWidget() {
 
-	const { container, toggleBtn } = styles
+	const { container, toggleBtn, mainIcon } = styles
 
 	const [currentTheme, setCurrentTheme] = useState(document.body.getAttribute("data-theme") || "light");
 
@@ -27,14 +27,14 @@ function ThemeTogglerWidget() {
 				className={toggleBtn}
 			>
 				{currentTheme == "light" ?
-					<FontAwesomeIcon icon={faLightbulb} style={{ color: "#fcff5c", }} /> :
+					<FontAwesomeIcon icon={faLightbulb} style={{ color: "#1dd3b0", }} /> :
 					<FontAwesomeIcon icon={faLightbulb} />
 				}
 			</button>
 
 			{currentTheme == "light" ?
-				<span>current theme is light</span> :
-				<span>current theme is dark</span>
+				<FontAwesomeIcon icon={faSun} className={mainIcon} beatFade /> :
+				<FontAwesomeIcon icon={faMoon} className={mainIcon} bounce />
 			}
 
 		</div>

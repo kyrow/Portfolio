@@ -18,7 +18,10 @@
 
 .title {
 	position: absolute;
-	color: aliceblue;
 	top: 0;
 	left: 0;
+
+	font-size: 18px;
+	font-weight: 600;
+	color: $light_header;
 }

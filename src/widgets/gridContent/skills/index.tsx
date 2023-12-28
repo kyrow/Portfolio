@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import styles from './index.module.scss'
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 
 function SkillsSliderWidget() {
@@ -21,10 +21,14 @@ function SkillsSliderWidget() {
 		<Swiper
 			slidesPerView={1}
 			pagination={true}
-			modules={[Pagination]}
+			modules={[Pagination, Autoplay]}
 			className={container}
+			autoplay={{
+				delay: 1500,
+				disableOnInteraction: false,
+			}}
 		>
-			<span className={title}>Stack:</span>
+			<h2 className={title}>Hard skills:</h2>
 			{skillsPictures.map((picture, index) => (
 				<SwiperSlide
 					key={index}

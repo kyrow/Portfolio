@@ -1,13 +1,13 @@
 
 import styles from './index.module.scss'
 import { useState } from "react"
-import { faArrowLeft, faArrowRight, faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { faArrowLeft, faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin, faTelegram } from "@fortawesome/free-brands-svg-icons"
 
 function ContactWidget() {
 
-	const { container, textSection, button } = styles
+	const { container, button, textSection, buttonIcon, reverseButtonIcon } = styles
 	const [isContactOpen, setContactOpen] = useState(false)
 
 	const switchState = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -23,42 +23,42 @@ function ContactWidget() {
 				onClick={switchState}
 				onMouseDown={(e) => e.stopPropagation()}
 			>
-				{isContactOpen ?
-					<FontAwesomeIcon icon={faArrowLeft} /> :
-					<FontAwesomeIcon icon={faArrowRight} />
-				}
+				<FontAwesomeIcon
+					icon={faArrowLeft}
+					className={isContactOpen ? buttonIcon : reverseButtonIcon}
+				/>
 			</button>
 
 			{!isContactOpen &&
-				<div className={textSection}>
-					<h3>You can find me here</h3>
-				</div>}
+
+				<h2>You can find me here</h2>
+			}
 
 			{isContactOpen &&
-				<div className={textSection}>
-					<ul>
-						<li>
-							<FontAwesomeIcon icon={faTelegram} />
-							<a href="">Telegram</a>
-						</li>
-						<li>
-							<FontAwesomeIcon icon={faGithub} />
-							<a href="">Github</a>
-						</li>
-						<li>
-							<FontAwesomeIcon icon={faEnvelope} />
-							<a href="">Mail</a>
-						</li>
-						<li>
-							<FontAwesomeIcon icon={faLinkedin} />
-							<a href="">LinkedIn</a>
-						</li>
-						<li>
-							<FontAwesomeIcon icon={faGithub} />
-							<a href="">HeadHunter</a>
-						</li>
-					</ul>
-				</div>
+
+				<ul className={textSection}>
+					<li>
+						<FontAwesomeIcon icon={faTelegram} />
+						<a href="">Telegram</a>
+					</li>
+					<li>
+						<FontAwesomeIcon icon={faGithub} />
+						<a href="">Github</a>
+					</li>
+					<li>
+						<FontAwesomeIcon icon={faEnvelope} />
+						<a href="">Mail</a>
+					</li>
+					<li>
+						<FontAwesomeIcon icon={faLinkedin} />
+						<a href="">LinkedIn</a>
+					</li>
+					<li>
+						<FontAwesomeIcon icon={faGithub} />
+						<a href="">HeadHunter</a>
+					</li>
+				</ul>
+
 			}
 
 		</div>
